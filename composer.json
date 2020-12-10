@@ -11,5 +11,8 @@
             "name": "Geriano",
             "email": "gerznewbie@gmail.com"
         }
-    ]
+    ],
+    "autoload": {
+        "Geriano\\Container\\": "src"
+    }
 }
