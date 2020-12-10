@@ -1,5 +1,5 @@
 # php-container
-[h1]PHP Dependency Injection
+PHP Dependency Injection
 
 Usage:
 ```php
@@ -65,7 +65,7 @@ var_dump($foo->bar());
 ```
 
 Requirement:
-**php: 8
+**php**: 8
 
 Instalation:
 ```bash
