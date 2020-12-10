@@ -42,7 +42,7 @@ class Container implements ArrayAccess
   /**
    * Get current container instance
    */
-  public function getInstance() : Container
+  public static function getInstance() : Container
   {
     // if container instance not exists
     // we set it to default
