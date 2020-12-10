@@ -13,6 +13,8 @@
         }
     ],
     "autoload": {
-        "Geriano\\Container\\": "src"
+        "psr-4": {
+            "Geriano\\Container\\": "src"
+        }
     }
 }
