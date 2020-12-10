@@ -5,6 +5,7 @@ namespace Geriano\Container;
 use ArrayAccess;
 use ReflectionClass;
 use ReflectionException;
+use ReflectionFunction;
 use ReflectionMethod;
 
 class Container implements ArrayAccess 
@@ -176,6 +177,37 @@ class Container implements ArrayAccess
     }
 
     return $dependencies;
+  }
+
+  /**
+   * Call method with automatically
+   */
+  public function call(callable $callback, array $parameters = [])
+  {
+    if(is_array($callback)) {
+      $instance = is_string($callback[0]) ? $this->make($callback[0]): $callback[0];
+      $method   = $callback[1];
+
+      $reflection = new ReflectionMethod($instance, $method);
+
+      if(! $reflection->getParameters()) {
+        return $instance->{$method}();
+      } 
+
+      return $instance->{$method}(...$this->dependencies(
+        $reflection->getParameters(), $parameters
+      ));
+    } else {
+      $reflection = new ReflectionFunction($callback);
+
+      if(! $reflection->getParameters()) {
+        return $reflection->invoke();
+      }
+
+      return $reflection->invokeArgs($this->dependencies(
+        $reflection->getParameters(), $parameters
+      ));
+    }
   }
 
   /**
