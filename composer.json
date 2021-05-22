@@ -17,5 +17,6 @@
             "Geriano\\Container\\": "src"
         }
     },
-    "composer-runtime-api": "^2.0"
+    "composer-runtime-api": "^2.0",
+    "minimum-stability": "dev"
 }
