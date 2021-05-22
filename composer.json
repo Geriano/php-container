@@ -1,7 +1,6 @@
 {
     "name": "geriano/container",
     "description": "Dependency injections",
-    "type": "library",
     "require": {
         "php": "^8"
     },
