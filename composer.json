@@ -17,6 +17,14 @@
             "Geriano\\Container\\": "src"
         }
     },
-    "composer-runtime-api": "^2.0",
+    "composer-runtime-api": "^1.0|^2.0",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "dev"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
     "minimum-stability": "dev"
 }
