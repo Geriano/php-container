@@ -3,7 +3,7 @@
     "description": "Dependency injections",
     "type": "library",
     "require": {
-        "php": "8"
+        "php": "^8"
     },
     "license": "MIT",
     "authors": [
@@ -16,5 +16,6 @@
         "psr-4": {
             "Geriano\\Container\\": "src"
         }
-    }
+    },
+    "composer-runtime-api": "^2.0"
 }
